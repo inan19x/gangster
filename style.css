@@ -1,0 +1,14 @@
+body{background-color:#c0c0c0;font-family:verdana;font-size:12px;color:#333333;}
+a{text-decoration:none;}
+a:hover{color:#000000}
+.bingkai{background-color:#FFFFFF;padding-left:10px;width:1024px;}
+#head{background-image:url(bghead.jpg);height:120px;}
+#foot{background-image:url(bgfoot.jpg);height:75px;font-size:10px;}
+#index{background-image:url(users.gif);background-position:bottom right;background-repeat:no-repeat;}
+#home{background-image:url(user.gif);background-position:bottom right;background-repeat:no-repeat;}
+#forum{background-image:url(news.gif);background-position:bottom right;background-repeat:no-repeat;}
+#pesan{background-image:url(editnews.gif);background-position:bottom right;background-repeat:no-repeat;}
+#reg{background-image:url(users.gif);background-position:bottom right;background-repeat:no-repeat;}
+#error{background-image:url(error.gif);background-position:bottom right;background-repeat:no-repeat;}
+input{border-style:solid;border-width:1px;border-color:#999999;color:#4e5d9d;width:150px;}
+table{font-family:verdana;font-size:12px;color:#333333;}
