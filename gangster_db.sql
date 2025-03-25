@@ -73,6 +73,7 @@ CREATE TABLE `testi` (
   `dari` varchar(20) collate latin1_general_ci NOT NULL,
   `isi` varchar(255) collate latin1_general_ci NOT NULL,
   `untuk` varchar(20) collate latin1_general_ci NOT NULL,
+  `tgl` varchar(20) NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
