@@ -45,7 +45,11 @@ $row=mysqli_fetch_array($qry);
 	</form>
 	</div>
 		
-	<a href="home.php">&lt;&lt; Back</a><br><br><br><br>
+	<?php
+	echo "<a href=\"user.php?page=$uname\">&lt;&lt; Back</a>";
+	?>
+	
+	<br><br><br><br>
 	</div>
 	<?php include "foot.php"; ?>
 	</center>

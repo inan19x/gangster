@@ -7,7 +7,7 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 	include "konek.php";
 	$sql="update member set poto='$uname' where uname='$uname'";
 	$qry=mysqli_query($mysqli,$sql);
-	header("Location: home.php");
+	header("Location: user.php?page=$uname");
 }
 else{
 	header("Location: error.php");
