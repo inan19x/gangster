@@ -10,6 +10,6 @@ else{
 	$hint=$_POST['hint'];
 	$sql="update member set passwd='$passwd', hint='$hint' where uname='$uname'";
 	mysqli_query($mysqli,$sql);
-	header("Location:home.php");
+	header("Location:user.php?page=$uname");
 }
 ?>

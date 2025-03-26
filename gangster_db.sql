@@ -12,92 +12,144 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `gangster`
 --
-CREATE DATABASE `gangster` DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;
+CREATE DATABASE IF NOT EXISTS `gangster` DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;
 USE `gangster`;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `isitopik`
+-- Table structure for table `aktivitas`
+--
+
+CREATE TABLE `aktivitas` (
+	  `id` int(5) NOT NULL,
+	  `tgl` timestamp NOT NULL DEFAULT current_timestamp(),
+	  `html` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `isitopik`
 --
 
 CREATE TABLE `isitopik` (
-  `tisi` int(5) NOT NULL auto_increment,
-  `tid` varchar(5) collate latin1_general_ci NOT NULL,
-  `isi` text collate latin1_general_ci NOT NULL,
-  `tgl` timestamp NOT NULL default CURRENT_TIMESTAMP,
-  `dari` varchar(20) collate latin1_general_ci NOT NULL,
-  PRIMARY KEY  (`tisi`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data untuk tabel `isitopik`
---
-
+	  `tisi` int(5) NOT NULL,
+	  `tid` varchar(5) NOT NULL,
+	  `isi` text NOT NULL,
+	  `tgl` timestamp NOT NULL DEFAULT current_timestamp(),
+	  `dari` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `member`
+-- Table structure for table `member`
 --
 
 CREATE TABLE `member` (
-  `uname` varchar(20) collate latin1_general_ci NOT NULL,
-  `passwd` varchar(32) collate latin1_general_ci NOT NULL,
-  `hint` varchar(100) collate latin1_general_ci NOT NULL,
-  `email` varchar(40) collate latin1_general_ci NOT NULL,
-  `kata` varchar(255) collate latin1_general_ci NOT NULL,
-  `alamat` varchar(100) collate latin1_general_ci NOT NULL,
-  `mobilephone` varchar(20) collate latin1_general_ci NOT NULL,
-  `school` varchar(100) collate latin1_general_ci NOT NULL,
-  `kesibukan` varchar(20) collate latin1_general_ci NOT NULL,
-  `deskripsi` varchar(255) collate latin1_general_ci NOT NULL,
-  `poto` varchar(20) collate latin1_general_ci NOT NULL default 'default',
-  UNIQUE KEY `uname` (`uname`),
-  UNIQUE KEY `email` (`email`)
+	  `uname` varchar(20) NOT NULL,
+	  `passwd` varchar(32) NOT NULL,
+	  `hint` varchar(100) NOT NULL,
+	  `email` varchar(40) NOT NULL,
+	  `kata` varchar(255) NOT NULL,
+	  `alamat` varchar(100) NOT NULL,
+	  `mobilephone` varchar(20) NOT NULL,
+	  `school` varchar(100) NOT NULL,
+	  `kesibukan` varchar(20) NOT NULL,
+	  `deskripsi` varchar(255) NOT NULL,
+	  `poto` varchar(20) NOT NULL DEFAULT 'default'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Dumping data untuk tabel `member`
---
-
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `testi`
+-- Table structure for table `testi`
 --
 
 CREATE TABLE `testi` (
-  `id` int(5) NOT NULL auto_increment,
-  `dari` varchar(20) collate latin1_general_ci NOT NULL,
-  `isi` varchar(255) collate latin1_general_ci NOT NULL,
-  `untuk` varchar(20) collate latin1_general_ci NOT NULL,
-  `tgl` varchar(20) NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data untuk tabel `testi`
---
-
+	  `id` int(5) NOT NULL,
+	  `dari` varchar(20) NOT NULL,
+	  `isi` varchar(255) NOT NULL,
+	  `untuk` varchar(20) NOT NULL,
+	  `tgl` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `topik`
+-- Table structure for table `topik`
 --
 
 CREATE TABLE `topik` (
-  `tid` int(5) NOT NULL auto_increment,
-  `topik` varchar(50) collate latin1_general_ci NOT NULL,
-  `author` varchar(20) collate latin1_general_ci NOT NULL,
-  `darilast` varchar(20) collate latin1_general_ci NOT NULL,
-  `tgllast` timestamp NOT NULL default CURRENT_TIMESTAMP,
-  PRIMARY KEY  (`tid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
+	  `tid` int(5) NOT NULL,
+	  `topik` varchar(50) NOT NULL,
+	  `author` varchar(20) NOT NULL,
+	  `darilast` varchar(20) NOT NULL,
+	  `tgllast` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data untuk tabel `topik`
+-- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `aktivitas`
+--
+ALTER TABLE `aktivitas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `isitopik`
+--
+ALTER TABLE `isitopik`
+  ADD PRIMARY KEY (`tisi`);
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD UNIQUE KEY `uname` (`uname`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `testi`
+--
+ALTER TABLE `testi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `topik`
+--
+ALTER TABLE `topik`
+  ADD PRIMARY KEY (`tid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `aktivitas`
+--
+ALTER TABLE `aktivitas`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `isitopik`
+--
+ALTER TABLE `isitopik`
+  MODIFY `tisi` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `testi`
+--
+ALTER TABLE `testi`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `topik`
+--
+ALTER TABLE `topik`
+  MODIFY `tid` int(5) NOT NULL AUTO_INCREMENT;
+COMMIT;
 

@@ -12,3 +12,4 @@ a:hover{color:#000000}
 #error{background-image:url(error.gif);background-position:bottom right;background-repeat:no-repeat;}
 input{border-style:solid;border-width:1px;border-color:#999999;color:#4e5d9d;width:150px;}
 table{font-family:verdana;font-size:12px;color:#333333;}
+blockquote{display:block;background-color:#dedede;font-family:helvetica;font-size:12px;font-style:italic;padding:5px;}

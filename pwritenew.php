@@ -16,6 +16,7 @@ else{
 	$isi=strip_tags($isi, '<b><i><u><br/><br>');
 	$topik=strip_tags($topik);
 	include "konek.php";
+	$isi=mysqli_real_escape_string($mysqli,$isi);
 	$sql="select * from topik";
 	$qry=mysqli_query($mysqli,$sql);
 	$tot=mysqli_num_rows($qry);
@@ -29,6 +30,8 @@ else{
 	$qry2=mysqli_query($mysqli,$sql2);
 	$sql3="insert into isitopik(tid,isi,dari) values('$tid', '$isi', '$author')";
 	$qry3=mysqli_query($mysqli,$sql3);
+	$trx="insert into aktivitas (html) values ('<tr><td valign=\"top\" bgcolor=\"#f0f0f0\" width=\"50\"><img src=\"foto_galeri/uploads/$author.jpg\" width=\"50\" /></td><td valign=\"top\" bgcolor=\"#f0f0f0\"><a href=\"user.php?page=$author\">$author</a> posts a new thread <a href=\"viewforum.php?tid=$tid\">$topik</a>: <blockquote>$isi</blockquote></td></tr>')";
+	$qtrx=mysqli_query($mysqli,$trx);
 	header("Location:view.php?page=1");
 }
 ?>

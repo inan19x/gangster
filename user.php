@@ -39,8 +39,21 @@ else{
 		<table>
 		<tr><td rowspan="3" valign="top" width="150"><img src="foto_galeri/uploads/<?php echo $z['poto']?>.jpg" width="120" height="100" ><br>
 		<a href="foto_galeri/uploads/<?php echo $view?>.jpg" target="_blank"><sup>See original</sup></a></td>
-		<td style="border:1px #333333 dotted;font-size:11px;" bgcolor="#e5e5e5" width="200">&quot;<i><?php echo $row['kata']?></i>&quot;</td></tr>
-		<tr><td valign="bottom"><b><?php echo $row['uname']?></b></td></tr>
+		<td width="250" align="right">
+		<div style="border:1px #333333 dotted;font-size:11px;background-color:#e5e5e5;padding:5px;" align="left">&quot;<i><?php echo $row['kata']?></i>&quot;</div>
+                <?php
+                if ($view==$uname){
+                ?>
+                <form method="post" action="edit.php">
+		<input name="uname" type="hidden" value="<?php echo $uname?>" ><input type="submit" value="Edit info.." />
+		</form>
+                <?php
+                }
+                ?>
+		</td></tr>
+		<tr><td valign="bottom">
+		<b><?php echo $row['uname']?></b>
+		</td></tr>
 		<tr><td valign="top"><img src="mail.png" width="15" height="10" /> <?php echo $row['email']?></td></tr>
 		<?php 
 		if ($view==$uname){
@@ -59,20 +72,11 @@ else{
 		<?php
 		if($row['alamat']!=""){echo "<b><u>Address</u></b><br>$row[alamat]<br>";}
 		if($row['mobilephone']!=""){echo "<b><u>Mobile Phone</u></b><br>$row[mobilephone]<br>";}
-		if($row['kesibukan']!=""){echo "<b><u>Work</u></b><br>$row[kesibukan]<br>";}
-		if($row['school']!=""){echo "<b><u>Title</u></b><br>$row[school]<br>";}
+		if($row['school']!=""){echo "<b><u>Work</u></b><br>$row[school]<br>";}
+		if($row['kesibukan']!=""){echo "<b><u>Title</u></b><br>$row[kesibukan]<br>";}
 		if($row['deskripsi']!=""){echo "<b><u>About Me</u></b><br>$row[deskripsi]";}
 		?>
 		<br><br>
-                <?php
-                if ($view==$uname){
-                ?>
-		<form method="post" action="edit.php">
-		<input name="uname" type="hidden" value="<?php echo $uname?>" ><input type="submit" value="Edit info..">
-		</form>
-                <?php
-                }
-                ?>
 		</div><br>
 		Comment for <?php echo $view ?>:<br>
 		<form method="post" action="testi.php">
