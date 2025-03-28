@@ -24,8 +24,8 @@ else{
 }
 $pct = 100/($page+4);
 ?>
-		<table><caption><?php echo "total $jml user(s)"; ?>
-		<tr><td bgcolor="#c1ceee">Username</td><td bgcolor='#c1ceee' width="400">Shout out</td></tr>
+		<table><caption><?php echo "Total $jml user(s)"; ?>
+		<tr><th bgcolor="#c1ceee">Username</th><th bgcolor='#c1ceee' width="400">Shout out</th></tr>
 		<?php
 		while($xz=mysqli_fetch_array($qry)){
 			echo "<tr><td bgcolor='#f0f0f0'><a href='user.php?page=".$xz['uname']."'>".$xz['uname']."</a></td>";

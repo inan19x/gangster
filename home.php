@@ -22,11 +22,9 @@ $row=mysqli_fetch_array($qry);
 	<center>
 	<?php include "head.php"; ?>
 	<div class="bingkai" id="home">
-	<div align="right"><a href='user.php?page=<?php echo $uname?>'>My Profile | </a><a href="logout.php">Logout: <?php echo $uname?></a>&nbsp;</div>
+	<div align="right"><a href='user.php?page=<?php echo $uname?>'>My Profile | </a><a href="logout.php">Logout: <?php echo $uname?></a>&nbsp;</div><br>
 	<div align="center" style="padding-left:30px;">
-	<br>
-	<img src="logo.jpg" /><br>
-	<?php include "feeds.php"; ?><br><br>
+	<?php include "feeds.php"; ?><img src="logo.jpg" /><br>
 	</div>
 	</div>
 	<?php include "foot.php"; ?>

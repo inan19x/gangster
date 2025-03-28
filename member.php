@@ -1,14 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION['member']) && ($_SESSION['uname'])){
+if(isset($_SESSION['member'])){
 	$uname=$_SESSION['uname'];
 	include "konek.php";
 	$sql="select * from member where uname='$uname';";
 	$qry=mysqli_query($mysqli,$sql);
 	$row=mysqli_fetch_array($qry);
-}
-else{
-	header("Location:sorry.php");
 }
 ?>
 <html>
@@ -24,10 +21,15 @@ else{
 	<div class="bingkai" id="reg">
 	<div align="center">
 	<?php 
+	if(isset($_SESSION['member']) && ($_SESSION['uname'])){
 		echo "<div align='right'><a href='user.php?page=$uname'>My Profile | </a><a href='logout.php'>Logout: $uname</a>&nbsp;</div>";
 		echo "<br>";
 		include "allmember.php";
 		echo "<br><br><br>";
+	}
+	else{
+		header("Location:sorry.php");
+	}
 	?>
 	</div>
 	</div>

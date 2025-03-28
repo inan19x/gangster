@@ -37,15 +37,15 @@ else{
 		<div align="left" style="padding-left:30px;">
 		<br><br>
 		<table>
-		<tr><td rowspan="3" valign="top" width="150"><img src="foto_galeri/uploads/<?php echo $z['poto']?>.jpg" width="120" height="100" ><br>
+		<tr><td rowspan="3" valign="top" width="120"><img src="foto_galeri/uploads/<?php echo $z['poto']?>.jpg" width="120" height="100" ><br>
 		<a href="foto_galeri/uploads/<?php echo $view?>.jpg" target="_blank"><sup>See original</sup></a></td>
-		<td width="250" align="right">
-		<div style="border:1px #333333 dotted;font-size:11px;background-color:#e5e5e5;padding:5px;" align="left">&quot;<i><?php echo $row['kata']?></i>&quot;</div>
+		<td width="350" align="right">
+		<div style="border:1px #333333 dotted;font-size:23px;background-color:#e5e5e5;padding:5px;" align="left">&quot;<i><?php echo $row['kata']?></i>&quot;</div>
                 <?php
                 if ($view==$uname){
                 ?>
                 <form method="post" action="edit.php">
-		<input name="uname" type="hidden" value="<?php echo $uname?>" ><input type="submit" value="Edit info.." />
+		<input name="uname" type="hidden" value="<?php echo $uname?>" ><input type="submit" value="Edit info..." />
 		</form>
                 <?php
                 }
@@ -54,14 +54,14 @@ else{
 		<tr><td valign="bottom">
 		<b><?php echo $row['uname']?></b>
 		</td></tr>
-		<tr><td valign="top"><img src="mail.png" width="15" height="10" /> <?php echo $row['email']?></td></tr>
+		<tr><td valign="top"><img src="mail.png" width="30" height="20" /> <?php echo $row['email']?></td></tr>
 		<?php 
 		if ($view==$uname){
 		?>
 		<tr><td colspan="2">
 		<form enctype="multipart/form-data" action="uploader.php" method="POST">
 		<input type="hidden" name="MAX_FILE_SIZE" value="200000" >
-		<input style="width=300px;" name="uploadedfile" type="file" ><br><input type="submit" value="Upload photo!" ><br><sub>*.jpg file only! MAX 200 KB</sub>
+		<input style="width=300px;" name="uploadedfile" type="file" ><br><input type="submit" value="Upload!" ><br><sub>*.jpg file only! MAX 200 KB</sub>
 		</form>
 		</td></tr>
 		<?php
@@ -83,7 +83,7 @@ else{
                 <?php
                 echo "<input type='hidden' name='dari' value='$uname'>";
                 echo "<input type='hidden' name='untuk' value='$view'>";
-                echo "<input style='background-color:#c0c0ff;' type='submit' value='Add comment..'>";
+                echo "<input style='background-color:#c0c0ff;' type='submit' value='Add...'>";
 		?>
 		</form>
 		<?php

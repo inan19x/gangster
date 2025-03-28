@@ -13,17 +13,17 @@
 		<br><br>
 		<?php
 		if(!isset($_SESSION['member'])){
-			echo "<div style='background-color:#e5e5ff;padding-left:10px;width:500px;'>";
+			echo "<div style='background-color:#f0fff0;padding-left:10px;width:600px;'>";
 			echo "<form method='post' action='psignup.php'><br>";
-			echo "<table>";
-			echo "<tr><td valign='top'>Desired username *<br><font size='1'><i>username is permanent!</i></font></td><td valign='top'><input name='uname' type='text' maxlength='20' ></td></tr>";
-			echo "<tr><td>Password</td><td><input name='passwd' type='password' maxlength='20' ></td></tr>";
-			echo "<tr><td valign='top'>Password hint<br><font size='1'><i>Do not put your password here</i></font></td><td valign='top'><input name='hint' type='text' maxlength='100' ></td></tr>";
-			echo "<tr><td>Email *</td><td><input name='email' type='text' maxlength='50' ></td></tr>";
-			echo "<tr><td valign='top'>Keyword to register * <i>Yes, i am a... </i><br><font size='1'><i>Please type-in the magic keyword...</i></font></td><td valign='top'><input name='key' type='text' maxlength='50' ><br><img src='logo.jpg'></td></tr>";
-			echo "<tr><td colspan='2' align='right'><input type='submit' value='Register...' ></td></tr>";
+			echo "<table width='600' border='0'>";
+			echo "<tr><td valign='top'>Desired username<br><font size='1'><i>Username is permanent!</i></font></td><td valign='top'><input name='uname' type='text' maxlength='20' style='width:300px;'></td></tr>";
+			echo "<tr><td>Password</td><td><input name='passwd' type='password' maxlength='20' style='width:300px;'></td></tr>";
+			echo "<tr><td valign='top'>Password hint<br><font size='1'><i>Do not put your password here</i></font></td><td valign='top'><input name='hint' type='text' maxlength='100' style='width:300px;'></td></tr>";
+			echo "<tr><td>Email</td><td><input name='email' type='text' maxlength='50' style='width:300px;'></td></tr>";
+			echo "<tr><td valign='top'>Keyword<font size='1'><br><i>Please type-in the magic keyword...</i><br><img src='logo.jpg'></font></td><td valign='top'><input name='key' type='text' maxlength='50' style='width:300px;'></td></tr>";
+			echo "<tr><td>&nbsp;</td><td><input type='submit' value='Register!' style='width:250px;'></td></tr>";
 			echo "</table><br><br>";
-			echo "<a href='index.php'>&lt;&lt; I have registered.</a>";
+			echo "<a href='index.php'>&lt;&lt; I have registered</a>";
 			echo "</form>";
 			echo "<br></div>";
 		}

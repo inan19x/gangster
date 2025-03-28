@@ -21,16 +21,16 @@ $row=mysqli_fetch_array($qry);
 	<center>
 	<?php include "head.php"; ?>
 	<div class="bingkai" id="home">
-		<div align="right"><a href='user.php?page=<?php echo $uname?>'>My Profile | </a><a href="logout.php">Logout: <?php echo $uname?></a>&nbsp;</div>
+		<div align="right"><a href='user.php?page=<?php echo $uname?>'>My Profile | </a><a href="logout.php">Logout: <?php echo $uname?></a>&nbsp;</div><br><br>
 	<form method="post" action="pedit.php">
 	<table align="center">
 		<tr><td>Shoutout</td><td><input name="kata" value="<?php echo $row['kata']?>" type="text" maxlength="255"></td></tr>
-		<tr><td valign="top">Email</td><td><input valign="top" name="email" value="<?php echo $row['email']?>" type="text"><br><sup>Must be correct email format</sup></td></tr>
+		<tr><td valign="top">Email</td><td><input valign="top" name="email" value="<?php echo $row['email']?>" type="text"></td></tr>
 		<tr><td>Address</td><td><input name="alamat" value="<?php echo $row['alamat']?>" type="text" maxlength="100"></td></tr>
 		<tr><td>Mobile Phone</td><td><input name="mobilephone" value="<?php echo $row['mobilephone']?>" type="text" maxlength="20"></td></tr>
 		<tr><td>Work</td><td><input name="school" value="<?php echo $row['school']?>" type="text" maxlength="100"></td></tr>
 		<tr><td>Title</td><td><input name="kesibukan" value="<?php echo $row['kesibukan']?>" type="text" maxlength="20"></td></tr>
-		<tr><td valign="top">About Me</td><td valign="top"><input name="deskripsi" value="<?php echo $row['deskripsi']?>" type="text" maxlength="255"><br><sup>Describe yourself</sup></td></tr>
+		<tr><td valign="top">About Me</td><td valign="top"><input name="deskripsi" value="<?php echo $row['deskripsi']?>" type="text" maxlength="255"></td></tr>
 		<tr><td colspan="2" align="right"><input type="submit" value="Update..."></td></tr>
 	</table>
 	</form>

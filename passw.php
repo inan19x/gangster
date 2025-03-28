@@ -10,11 +10,11 @@
 	<?php include "head.php"; ?>
 	<div class="bingkai" id="index">
 		<div align="center">
-		<br><br><big>Password hint generator</big><br>
-		This form will provide you a password hint request to your respective email upon registration.<br><br><br>
-		<center><div style="background-color:#f0f0ff;width:500px;padding-top:20px;padding-bottom:20px;">
+		<br><br><big>Password hint look-up</big><br>
+		<sup>This form will provide you a password hint entered upon registration.</sup><br><br><br>
+		<center><div style="background-color:#fff0f0;width:600px;padding-top:20px;padding-bottom:20px;">
 		<form method="post" action="passw.php">
-		Name/email : <input type="text" name="pelupa" > <input type="submit" value="Find..." >
+		Username/email : <input type="text" name="pelupa" > <input type="submit" value="Find..." >
 		</form>
 		<?php
 		include "konek.php";
@@ -29,7 +29,7 @@
 		$row=mysqli_fetch_array($qry);
 		$jum=mysqli_num_rows($qry);
 		if(($pelupa=="")or($jum==0)){
-			echo "<center><i>Please input member email address</i></center>";
+			echo "<center><i>Please input username/email</i></center>";
 		}
 		else{
 			echo "hint for $pelupa:<br><i>$row[hint]</i>";

@@ -23,7 +23,7 @@ else{
 	<center>
 	<?php include "head.php"; ?>
 	<div class="bingkai" id="home">
-		<div align="right"><a href="user.php?page=<?php echo$uname?>">My Profile | </a><a href="logout.php">Logout: <?php echo $uname?></a>&nbsp;</div>
+		<div align="right"><a href="user.php?page=<?php echo$uname?>">My Profile | </a><a href="logout.php">Logout: <?php echo $uname?></a>&nbsp;</div><br><br>
 		<form method="post" action="ptesti.php">
 		<input type="hidden" size="300" name="dari" value="<?php echo $uname ?>" ><input type="hidden" size="300" name="untuk" value="<?php echo $untuk ?>" >
 		Comment for <?php echo $untuk?>:<br><textarea name="isi" rows="2" cols="50"></textarea><br><input type="submit" value="Send..."><br>

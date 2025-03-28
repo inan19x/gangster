@@ -29,8 +29,8 @@ $pct = 100/($page+4);
 	while($row=mysqli_fetch_array($qry)){
 		$x="select poto from member where uname='$row[dari]'";
 		$y=mysqli_query($mysqli,$x);$z=mysqli_fetch_array($y);
-		echo "<tr><td width='30' valign='top' align='center'><a href='user.php?page=".$row['dari']."'><img src='foto_galeri/uploads/$z[poto].jpg' width='30' height='25'></a></td>";
-		echo "<td width='500' valign='top' bgcolor='#e5e5e5'><sup><u>".$row['dari']."</u> (".$row['tgl'].")<br>".$row['isi']."</sup></td></tr>";
+		echo "<tr><td width='30' valign='top' align='center'><a href='user.php?page=".$row['dari']."'><img src='foto_galeri/uploads/$z[poto].jpg' width='50' height='40'></a></td>";
+		echo "<td width='500' valign='top' bgcolor='#e5e5e5'><u>".$row['dari']."</u> (".$row['tgl'].")<br>".$row['isi']."</td></tr>";
 		echo "<tr><td bgcolor='#c0c0c0' colspan='2'></tr>";
 	}
 	?>
@@ -43,18 +43,18 @@ if($jml>5){
 	$next=$hal+1;
 	echo "<TD WIDTH=$lebar"."%>";
 	if ($hal!=1) {
-		echo "<A HREF='user.php?page=$view&page=$prev'><sub>&lt;&lt; Prev</sub></A>";
+		echo "<A HREF='user.php?page=$view&page=$prev'>&lt;&lt; Prev</A>";
 	}
 	else {
-		echo "<sub>&lt;&lt; Prev</sub>";
+		echo "&lt;&lt; Prev";
 	}
 	echo "</TD>";
 	echo "<TD WIDTH=$lebar"."%>";
 	if ($hal!=$page) {
-		echo "<A HREF='user.php?page=$view&page=$next'><sub>Next &gt;&gt;</sub></A>";
+		echo "<A HREF='user.php?page=$view&page=$next'>Next &gt;&gt;</A>";
 	}
 	else {
-		echo "<sub>Next &gt;&gt;</sub>";
+		echo "Next &gt;&gt;";
 	}
 	echo "</TD>";
 	echo "</tr></table>";

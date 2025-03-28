@@ -22,10 +22,10 @@ if(isset($_SESSION['member'])){
 	<div align="right"><a href="user.php?page=<?php echo$uname?>">My Profile | </a><a href="logout.php">Logout: <?php echo $uname?>&nbsp;</a></div>
 	<center><br><br>
 	<form method="post" action="pwritenew.php">
-	Judul topik baru:<br>
-	<input type="hidden" name="author" value="<?php echo $uname?>"><input type="text" name="topik" style="width:300px;" maxlength="50"><br><br>
-	<textarea name="isi" cols="70" rows="10"></textarea><br>
-	<input type="submit" value="Post ke Forum">
+	New thread title:<br>
+	<input type="hidden" name="author" value="<?php echo $uname?>"><input type="text" name="topik" style="width:500px;" maxlength="50"><br><br>
+	<textarea name="isi" cols="70" rows="10" style="width:800px;"></textarea><br>
+	<input type="submit" value="Post!">
 	</form>
 	<a href="view.php?page=1">&lt;&lt;- Back</a><br><br>
 	</div>

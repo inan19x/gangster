@@ -24,10 +24,10 @@ if(isset($_SESSION['member'])){
 	<center><br><br>
 	<form method="post" action="pwrite.php">
 	New post in topic "<?php echo $row['topik']?>"<br>
-	<textarea name="isi" cols="70" rows="10"></textarea><br>
+	<textarea name="isi" cols="70" rows="10" style="width:800px;"></textarea><br>
 	<input type="hidden" name="tid" value="<?php echo $tid?>">
 	<input type="hidden" name="author" value="<?php echo $uname?>">
-	<input type="submit" value="Post ke Forum">
+	<input type="submit" value="Post!">
 	</form>
 	<a href="view.php?page=1">&lt;&lt;- Back</a><br><br>
 	</div>

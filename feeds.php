@@ -4,8 +4,8 @@ include "konek.php";
 $strSQL1 = "select html from aktivitas order by tgl desc limit 10;";
 $qry = mysqli_query($mysqli,$strSQL1) or die (mysqli_error());
 ?>
-<table width="700">
-<tr><td bgcolor="#c1ceee" colspan="2">Last member activities</td></tr>
+<table width="750">
+<tr><th colspan="2">Last member activities</th></tr>
 <?php
 $tot=mysqli_num_rows($qry);
 if($tot!=0){

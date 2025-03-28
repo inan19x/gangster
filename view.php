@@ -42,8 +42,8 @@ $pct = 100/($page+4);
 		header("Location:sorry.php");
 	}
 	?>
-		<br><br><table style="border:solid 1px #c0c0c0;" align="center">
-		<tr><th width="300" bgcolor="#f0f0f0">Thread Subject</th><th width="150" bgcolor="#f0f0f0">Author</th><th width="150" bgcolor="#f0f0f0">Last Posted</th></tr>
+		<br><br><table style="border:solid 1px #c0c0c0;" align="center" width="800">
+		<tr><th width="300" bgcolor="#f0f0f0">Subject</th><th width="150" bgcolor="#f0f0f0">Author</th><th width="150" bgcolor="#f0f0f0">Last Post</th></tr>
 		<?php
 		while ($row=mysqli_fetch_array($qry))
 		{

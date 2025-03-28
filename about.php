@@ -1,5 +1,6 @@
 <?php
 session_start();
+//$uname=$_SESSION['uname'];
 ?>
 <html>
 <head>
@@ -13,10 +14,9 @@ session_start();
 	<?php include "head.php"; ?>
 	<div class="bingkai" id="index">
 	<?php
-	if(isset($_SESSION['member']) && ($_SESSION['uname'])){
-		$uname=$_SESSION['uname'];
-		echo "<div align='right'><a href='user.php?page=$uname'>My Profile | </a><a href='logout.php'>Logout: $uname&nbsp;</a></div>";
-	}
+	if(isset($_SESSION['member']) && ($_SESSION['uname']))
+		{$uname=$_SESSION['uname'];
+		echo "<div align='right'><a href='user.php?page=$uname'>My Profile | </a><a href='logout.php'>Logout: $uname&nbsp;</a></div>";}
 	?>
 		<div align="center">
 		<br><br><img src="logo.jpg" /><br>

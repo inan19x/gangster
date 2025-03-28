@@ -46,15 +46,15 @@ else{
 	echo "<br><big>Thread: ".$row2['topik']."</big><br>";
 	echo "<a href=\"view.php?page=1\">&lt&lt- Back</a><br><br>";
 	?>
-	<table border="0" align="center" style="font-size:11px;">
+	<table align="center" style="font-size:23px;" width="750">
 	<tr><td bgcolor="#c0c0c0" colspan="2"></tr>
 	<?php
 	while($row=mysqli_fetch_array($qry)){
 		$x="select poto from member where uname='$row[dari]'";
 		$y=mysqli_query($mysqli,$x);$z=mysqli_fetch_array($y);
-		echo "<tr><td valign='top' rowspan='2' width='100' align='center'><a href='user.php?page=".$row['dari']."'><img src='foto_galeri/uploads/$z[poto].jpg' width='40' height='30'></a></td>";
-		echo "<td valign='top' width='400'><a href='user.php?page=".$row['dari']."'><u>".$row['dari']."</u></a> (<i>".$row['tgl']."</i>)<br>".$row['isi']."</td></tr>";
-		echo "<tr><td align='right'><a href='write.php?tid=$tid'>[reply]</a></td></tr>";
+		echo "<tr><td valign='top' rowspan='2' width='100' align='center'><a href='user.php?page=".$row['dari']."'><img src='foto_galeri/uploads/$z[poto].jpg' width='100' height='80'></a></td>";
+		echo "<td valign='top' width='650'><a href='user.php?page=".$row['dari']."'><u>".$row['dari']."</u></a> (<i>".$row['tgl']."</i>)<br>".$row['isi']."</td></tr>";
+		echo "<tr><td align='right'><a href='write.php?tid=$tid'>[reply...]</a></td></tr>";
 		echo "<tr><td bgcolor='#c0c0c0' colspan='2'></tr>";
 	}
 	?>
