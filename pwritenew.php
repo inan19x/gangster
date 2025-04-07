@@ -17,6 +17,7 @@ else{
 	$topik=strip_tags($topik);
 	include "konek.php";
 	$isi=mysqli_real_escape_string($mysqli,$isi);
+	$topik=mysqli_real_escape_string($mysqli,$topik);
 	$sql="select * from topik";
 	$qry=mysqli_query($mysqli,$sql);
 	$tot=mysqli_num_rows($qry);
